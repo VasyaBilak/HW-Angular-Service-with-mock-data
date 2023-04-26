@@ -1,0 +1,54 @@
+<nav class="navbar bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white">Angular Blog</a>
+    <form class="d-flex">
+      <ng-container *ngIf="!signIn; else registeredUser">
+        <button
+          class="btn btn-outline-success border-remove__right"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+        >
+          Sign in
+        </button>
+        <button
+          class="btn btn-outline-info border-remove__left"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#signUp"
+        >
+          Sign up
+        </button>
+      </ng-container>
+    </form>
+  </div>
+</nav>
+
+<app-sign-in (fromChild)="getMessage($event)"></app-sign-in>
+<app-sign-up (fromChild)="getMessage($event)"></app-sign-up>
+
+<app-add-post [username]="username"></app-add-post>
+
+<ng-template #registeredUser>
+  <button
+    class="btn btn-outline-success border-remove__right"
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#addModal"
+  >
+    Add post
+  </button>
+  <button
+    class="btn btn-warning border-remove__left border-remove__right"
+    type="button"
+  >
+    {{ username }}
+  </button>
+  <button
+    class="btn btn-outline-warning border-remove__left"
+    type="button"
+    (click)="signOut()"
+  >
+    Sign out
+  </button>
+</ng-template>

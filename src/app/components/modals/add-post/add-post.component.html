@@ -1,0 +1,59 @@
+<!-- The Modal -->
+<div class="modal fade" id="addModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add post</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="title" id="title" class="form-label">Title:</label>
+          <input
+            type="title"
+            aria-label="Title"
+            class="form-control"
+            [(ngModel)]="title"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="text" for="pwd" id="pwd" class="form-label">Text:</label>
+          <textarea
+            class="form-control"
+            id="floatingTextarea"
+            [(ngModel)]="text"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="resetForm()"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          [disabled]="post"
+          (click)="addPost()"
+        >
+          Post
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

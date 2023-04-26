@@ -1,0 +1,61 @@
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Sign In</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="email" id="email" class="form-label">Email:</label>
+          <input
+            type="email"
+            [(ngModel)]="email"
+            aria-label="First name"
+            class="form-control"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" for="pwd" id="pwd" name class="form-label"
+            >Password:</label
+          >
+          <input
+            type="password"
+            [(ngModel)]="password"
+            aria-label="First name"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="resetForm()"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          (click)="sendMessage()"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
